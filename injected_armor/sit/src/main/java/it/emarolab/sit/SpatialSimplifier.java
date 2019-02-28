@@ -4,16 +4,16 @@ import it.emarolab.owloop.core.Semantic;
 import it.emarolab.sit.owloopDescriptor.SpatialIndividualDescriptor;
 import it.emarolab.sit.owloopDescriptor.SpatialObjectPropertyDescriptor;
 import it.emarolab.sit.realObject.GeometricPrimitive;
-import it.emarolab.sit.sceneRepresentation.SceneRepresentation;
+import it.emarolab.sit.sceneRepresentation.FullSceneRepresentation;
 
 import java.util.Set;
 
 
 /**
- * The class to manipulate the ontology to obtain the minimal set of spatial relation for {@link SceneRepresentation}.
+ * The class to manipulate the ontology to obtain the minimal set of spatial relation for {@link FullSceneRepresentation}.
  * <p>
  *     This class simplifies the ontology in order to query only the minimal set
- *     of relations that are needed by the {@link SceneRepresentation#learn(String)} method.
+ *     of relations that are needed by the {@link FullSceneRepresentation#learn(String)} method.
  *     It is also able to revert the simplification (by modifying the ontology)
  *     in order to query the spatial relations in a more human understandable way.
  *     <br>

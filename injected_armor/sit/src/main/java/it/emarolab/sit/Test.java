@@ -1,10 +1,13 @@
 package it.emarolab.sit;
 
+import it.emarolab.amor.owlDebugger.Logger;
 import it.emarolab.amor.owlInterface.OWLReferences;
 import it.emarolab.amor.owlInterface.OWLReferencesInterface;
+import it.emarolab.owloop.aMORDescriptor.MORAxioms;
 import it.emarolab.sit.owloopDescriptor.SceneClassDescriptor;
+import it.emarolab.sit.owloopDescriptor.SceneIndividualDescriptor;
 import it.emarolab.sit.realObject.*;
-import it.emarolab.sit.sceneRepresentation.SceneRepresentation;
+import it.emarolab.sit.sceneRepresentation.FullSceneRepresentation;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -44,13 +47,18 @@ public class Test
 
         // load ontology
         OWLReferences ontoRef = OWLReferencesInterface.OWLReferencesContainer.newOWLReferenceFromFileWithPellet(
-                ONTO_NAME, ONTO_FILE, ONTO_IRI, true);
+                ONTO_NAME, ONTO_FILE_SCORE, ONTO_IRI, true);
 
         // suppress aMOR log
-        it.emarolab.amor.owlDebugger.Logger.setPrintOnConsole( false);
+        Logger.setPrintOnConsole( false);
 
         // initialise objects
         Set< GeometricPrimitive> objects = new HashSet<>();
+
+        SpatialSimplifier simplifier0 = new SpatialSimplifier( objects);
+
+        FullSceneRepresentation recognition0 = new FullSceneRepresentation( simplifier0, ontoRef);
+
 
         // define objects
         Sphere s = new Sphere( ontoRef);
@@ -66,6 +74,16 @@ public class Test
         p.setHessian( .5f);
         objects.add( p);
 
+
+
+//double punteggio = 0.544;
+
+
+     //   Scor punteggio= new Scor(ontoRef);
+
+      //  System.out.println( "score " + punteggio.getScor());
+
+
         System.out.println( "Object " + objects);
         System.out.println("1 ----------------------------------------------");
 
@@ -73,15 +91,19 @@ public class Test
         // to semplify the characteristics of the relations during learning
         SpatialSimplifier simplifier = new SpatialSimplifier( objects);
         // create scene and reason for recognition
-        SceneRepresentation recognition1 = new SceneRepresentation( simplifier, ontoRef);
+        //SceneRepresentation recognition1 = new SceneRepresentation( simplifier, ontoRef);
+        FullSceneRepresentation recognition1 = new FullSceneRepresentation( simplifier, ontoRef);
 
-        /*
+
+
+
+
         // if you want the relation to be human friendly again
-        simplifier.populateHumanFriendlyRelationSet();
+        //simplifier.populateHumanFriendlyRelationSet();
         // and eventually
-        simplifier.readObjectSemantics( true);
-        objects = simplifier.getObjects();
-        */
+        //simplifier.readObjectSemantics( true);
+        //objects = simplifier.getObjects();
+
 
         System.out.println( "Recognised with best confidence: " + recognition1.getRecognitionConfidence() + " should learn? " + recognition1.shouldLearn());
         System.out.println( "Best recognised class: " + recognition1.getBestRecognitionDescriptor());
@@ -92,6 +114,28 @@ public class Test
             System.out.println("Learning.... ");
             recognition1.learn("TestScene");
         }
+
+
+
+        recognition1.getSceneDescriptor().addData("hasScore", 0.6);
+
+
+
+        SceneIndividualDescriptor sceneIndDescr3 = new SceneIndividualDescriptor("Sn-1", ontoRef);
+        sceneIndDescr3.readSemantic();
+        for( MORAxioms.DataSemantic l : sceneIndDescr3.getDataSemantics()){
+            String f3 =  l.getValues().toString().replace("{","").replace("}","");
+            Float ff3 = Float.valueOf(f3);
+            System.out.println(l.getSemantic() + " " +ff3);
+        }
+
+        sceneIndDescr3.addData( "hasStoringCounter", 0);
+        sceneIndDescr3.addData( "hasRetrievingCounter", 8);
+        sceneIndDescr3.writeSemantic();
+
+
+        recognition1.getSceneDescriptor().removeTypeIndividual( "Scene");
+        recognition1.getSceneDescriptor().writeSemantic();
 
         System.out.println("2 ----------------------------------------------");
 
@@ -104,14 +148,35 @@ public class Test
         System.out.println("3 ----------------------------------------------");
         System.out.println("3 ----------------------------------------------");
 
-        // clean ontology
-        ontoRef.removeIndividual( recognition1.getSceneDescriptor().getInstance());
+       // clean ontology
+        //ontoRef.removeIndividual( recognition1.getSceneDescriptor().getInstance());
         for ( GeometricPrimitive i : objects)
             ontoRef.removeIndividual( i.getInstance());
         ontoRef.synchronizeReasoner();
 
+
+        ontoRef.saveOntology("/home/maren/aaa.owl");
+        // load ontology
+        ontoRef = OWLReferencesInterface.OWLReferencesContainer.newOWLReferenceFromFileWithPellet(
+                ONTO_NAME + "new", "/home/maren/aaa.owl", ONTO_IRI, true);
+
         // augment the scene
-        Cone c = new Cone( ontoRef);
+        objects.clear();
+
+        s = new Sphere( ontoRef);
+        s.shouldAddTime( true);
+        s.setCenter( .3f, .3f, .3f);
+        s.setRadius( .1f);
+        objects.add( s);
+
+        p = new Plane( ontoRef);
+        p.shouldAddTime( true);
+        p.setAxis( .5f, .4f, .1f);
+        p.setCenter( .3f, .1f, .1f);
+        p.setHessian( .5f);
+        objects.add( p);
+
+       Cone c = new Cone( ontoRef);
         c.shouldAddTime( true);
         c.setCenter( .3f, .3f, .3f);
         c.setAxis( .0f, .1f, .0f);
@@ -123,14 +188,19 @@ public class Test
         System.out.println( "Object " + objects);
         System.out.println("4 ----------------------------------------------");
 
+
+
         // check recognition and learn if is the case
         SpatialSimplifier simplifier2 = new SpatialSimplifier( objects);
-        SceneRepresentation recognition2 = new SceneRepresentation( simplifier2, ontoRef);
+        //SceneRepresentation recognition2 = new SceneRepresentation( simplifier2, ontoRef);
+        FullSceneRepresentation recognition2 = new FullSceneRepresentation( simplifier2, ontoRef);
         System.out.println( "Recognised with best confidence: " + recognition2.getRecognitionConfidence() + " should learn? " + recognition2.shouldLearn());
         if ( recognition2.shouldLearn()) {
             System.out.println("Learning.... ");
             recognition2.learn("TestScene2");
         }
+        recognition2.getSceneDescriptor().addData("hasScore", 0.7);
+
 
         System.out.println( "Recognised with best confidence: " + recognition2.getRecognitionConfidence() + " should learn? " + recognition2.shouldLearn());
         System.out.println( "Best recognised class: " + recognition2.getBestRecognitionDescriptor());
@@ -138,14 +208,202 @@ public class Test
 
         System.out.println("5 ----------------------------------------------");
 
-        Set<SceneClassDescriptor> recognitionClasses = recognition2.getSceneDescriptor().buildTypeIndividual();
-        for ( SceneClassDescriptor cl1 : recognitionClasses)
-            for ( SceneClassDescriptor cl2 : recognitionClasses)
-                if ( ! cl1.equals( cl2))
-                    System.out.println( " is " + cl1.getInstance().getIRI().getRemainder().get() +
-                            " subclass of " + cl2.getInstance().getIRI().getRemainder().get() +"? " + cl1.getSubConcept().contains( cl2.getInstance()));
+
+
+        Set<SceneClassDescriptor> recognitionClasses2 = recognition2.getSceneDescriptor().buildTypeIndividual();
+        for ( SceneClassDescriptor cl1 : recognitionClasses2) {
+            for (SceneClassDescriptor cl2 : recognitionClasses2) {
+                if (!cl1.equals(cl2)) {
+                    System.out.println(" is " + cl1.getInstance().getIRI().getRemainder().get() +
+                            " subclass of " + cl2.getInstance().getIRI().getRemainder().get() + "? " + cl1.getSubConcept().contains(cl2.getInstance()));
+                    System.err.println(cl1);
+                }
+            }
+        }
+
+
+        SceneIndividualDescriptor sceneIndDescr2 = new SceneIndividualDescriptor("Sn-2", ontoRef);
+        sceneIndDescr2.readSemantic();
+        for( MORAxioms.DataSemantic l : sceneIndDescr2.getDataSemantics()){
+            String f2 =  l.getValues().toString().replace("{","").replace("}","");
+            Float ff2 = Float.valueOf(f2);
+            System.out.println(l.getSemantic() + " " +ff2);
+        }
+
+        sceneIndDescr2.addData( "hasStoringCounter", 1);
+        sceneIndDescr2.writeSemantic();
+
+
+        sceneIndDescr2.addData( "hasRetrievingCounter", 9);
+        sceneIndDescr2.writeSemantic();
+
+
 
 
         System.out.println("6 ----------------------------------------------");
+
+
+        recognition2.getSceneDescriptor().removeTypeIndividual( "Scene");
+        recognition2.getSceneDescriptor().writeSemantic();
+        // clean ontology
+   //    ontoRef.removeIndividual( recognition2.getSceneDescriptor().getInstance());
+        for ( GeometricPrimitive i : objects)
+            ontoRef.removeIndividual( i.getInstance());
+        ontoRef.synchronizeReasoner();
+
+        ontoRef.saveOntology("/home/maren/aaa.owl");
+        // load ontology
+        ontoRef = OWLReferencesInterface.OWLReferencesContainer.newOWLReferenceFromFileWithPellet(
+                ONTO_NAME + "newNew", "/home/maren/aaa.owl", ONTO_IRI, true);
+
+
+        // augment the scene
+
+        objects.clear();
+
+        // define objects
+         s = new Sphere( ontoRef);
+        s.shouldAddTime( true);
+        s.setCenter( .3f, .3f, .3f);
+        s.setRadius( .1f);
+        objects.add( s);
+/*
+        s = new Sphere( ontoRef);
+        s.shouldAddTime( true);
+        s.setCenter( .3f, .3f, .3f);
+        s.setRadius( .1f);
+        objects.add( s);
+
+        Cone c2 = new Cone( ontoRef);
+        c2.shouldAddTime( true);
+        c2.setCenter( .11f, .4f, .6f);
+        c2.setAxis( .5f, .2f, .2f);
+        c2.setApex( .3f, .5f, .2f);
+        c2.setRadius( .2f);
+        c2.setHeight( .06f);
+        objects.add( c2);*/
+
+        Cone c2 = new Cone( ontoRef);
+        c2.shouldAddTime( true);
+        c2.setCenter( .11f, .4f, .6f);
+        c2.setAxis( .5f, .2f, .2f);
+        c2.setApex( .3f, .5f, .2f);
+        c2.setRadius( .2f);
+        c2.setHeight( .06f);
+        objects.add( c2);
+
+         p = new Plane( ontoRef);
+        p.shouldAddTime( true);
+        p.setAxis( .5f, .4f, .1f);
+        p.setCenter( .3f, .1f, .1f);
+        p.setHessian( .5f);
+        objects.add( p);
+
+        Cylinder ci = new Cylinder( ontoRef);
+        ci.shouldAddTime( true);
+        ci.setCenter( .4f, .5f, .6f);
+        ci.setApex( 0f, 0f, 1f);
+        ci.setAxis( 0f, 0f, 1f);
+        ci.setRadius( .2f);
+        ci.setHeight( .06f);
+        objects.add( ci);
+
+
+        System.out.println( "Object " + objects);
+        System.out.println("44 ----------------------------------------------");
+
+        // check recognition and learn if is the case
+        SpatialSimplifier simplifier3 = new SpatialSimplifier( objects);
+
+        //SceneRepresentation recognition3 = new SceneRepresentation( simplifier3, ontoRef);
+        FullSceneRepresentation recognition3 = new FullSceneRepresentation( simplifier3, ontoRef);
+      //  ontoRef.saveOntology("/home/maren/aaa.owl");
+        System.out.println( "Recognised with best confidence: " + recognition3.getRecognitionConfidence() + " should learn? " + recognition3.shouldLearn());
+        if ( recognition3.shouldLearn()) {
+            System.out.println("Learning.... ");
+            recognition3.learn("TestScene3");
+        }
+
+
+
+        System.out.println( "Recognised with best confidence: " + recognition3.getRecognitionConfidence() + " should learn? " + recognition3.shouldLearn());
+        System.out.println( "Best recognised class: " + recognition3.getBestRecognitionDescriptor());
+        System.out.println( "Other recognised classes: " + recognition3.getSceneDescriptor().getTypeIndividual());
+
+        System.out.println("55 ----------------------------------------------");
+
+
+        Set<SceneClassDescriptor> recognitionClasses3 = recognition3.getSceneDescriptor().buildTypeIndividual();
+        for ( SceneClassDescriptor cl1 : recognitionClasses3) {
+            for (SceneClassDescriptor cl2 : recognitionClasses3) {
+               // Set<SceneClassDescriptor> a = cl1.buildSuperConcept();
+                if (!cl1.equals(cl2)) {
+                    System.out.println(" is " + cl1.getInstance().getIRI().getRemainder().get() +
+                            " subclass of " + cl2.getInstance().getIRI().getRemainder().get() + "? " + cl1.getSubConcept().contains(cl2.getInstance()));
+                    System.err.println(cl1);
+                }
+            }
+        }
+
+        recognition3.getSceneDescriptor().addData("hasScore", 0.8);
+
+        //  sceneIndDescr.addData( "hasScore", 0.4);
+        recognition3.getSceneDescriptor().addData("hasStoringCounter", 60);
+
+        recognition3.getSceneDescriptor().writeSemantic();
+
+
+        float hascore=0;
+
+        SceneIndividualDescriptor sceneIndDescr = new SceneIndividualDescriptor("Sn-3", ontoRef);
+        sceneIndDescr.readSemantic();
+        for( MORAxioms.DataSemantic l : sceneIndDescr.getDataSemantics()){
+            String f =  l.getValues().toString().replace("{","").replace("}","");
+            Float ff = Float.valueOf(f);
+            if (l.getSemantic().toString().contains("hasScore")) {
+                 hascore = ff;
+                System.out.println("hasScore" + " " + ff);
+            }
+        }
+        hascore+=1;
+        recognition3.getSceneDescriptor().removeData("hasScore");
+
+        recognition3.getSceneDescriptor().addData("hasScore", hascore);
+        recognition3.getSceneDescriptor().writeSemantic();
+
+
+        //sceneIndDescr.addData( "hasStoringCounter", 4);
+        sceneIndDescr.addData( "hasRetrievingCounter", 4);
+        sceneIndDescr.writeSemantic();
+
+
+
+
+        // clean ontology
+        recognition3.getSceneDescriptor().removeTypeIndividual( "Scene");
+        recognition3.getSceneDescriptor().writeSemantic();
+
+    /*    ontoRef.removeIndividual( recognition3.getSceneDescriptor().getInstance());*/
+        for ( GeometricPrimitive i : objects)
+            ontoRef.removeIndividual( i.getInstance());
+
+
+            ontoRef.removeIndividual( recognition0.getSceneDescriptor().getInstance());
+        ontoRef.synchronizeReasoner();
+
+
+
+
+
+        System.out.println("66 ----------------------------------------------");
+
+
+
+
+
+
+        ontoRef.saveOntology("/home/maren/test.owl");
+
+
     }
 }

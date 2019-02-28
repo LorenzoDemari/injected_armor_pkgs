@@ -1,7 +1,5 @@
 package it.emarolab.sit;
 
-import org.semanticweb.owlapi.model.OWLObjectProperty;
-
 /**
  * The base interface for the SIT architecture.
  * <p>
@@ -30,8 +28,8 @@ public interface SITBase {
      * The path to the main t-box ontological representation
      * used by the SIT algorithm, with respect to the {@code src} folder.
      */
-    //String ONTO_FILE = "resources/t_box/empty-scene.owl"; // TODO make this a relative for local using
-    String ONTO_FILE = "/home/bubx/ros_ws/src/injected_armor_pkgs/injected_armor/sit/resources/t_box/empty-scene.owl"; // TODO make this a parameter from ROS launcher
+    String ONTO_FILE = "/home/maren/rosjava/src/injected_armor_pkgs-master/injected_armor/sit/resources/t_box/empty-scene.owl";
+    String ONTO_FILE_SCORE = "/home/maren/rosjava/src/injected_armor_pkgs-master/injected_armor/sit/resources/t_box/empty-scene-scoreblabla.owl";
 
     /**
      * The {@code IRI} domain of the main t-box ontological representation
@@ -179,6 +177,9 @@ public interface SITBase {
          * (i.e.: belonging to the {@link CLASS#SPHERE}).
          */
         String SCENE = "Sn-";
+
+
+
     }
 
     /**
@@ -246,6 +247,9 @@ public interface SITBase {
          * (i.e.: {@link it.emarolab.sit.realObject.GeometricPrimitive})
          */
         String PRIMITIVE = "GeometricPrimitive";
+
+
+        String SCORE = "scoore";
     }
 
     /**
