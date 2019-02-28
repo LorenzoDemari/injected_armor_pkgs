@@ -1,0 +1,77 @@
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
+
+buildscript {
+  apply from: "https://github.com/rosjava/rosjava_bootstrap/raw/indigo/buildscript.gradle"
+}
+
+apply plugin: 'catkin'
+
+
+allprojects {
+    /*
+      A github url provides a good standard unique name for your project
+      Example below, but you may wish to switch to your own unique url.
+    */
+    group 'it.emarolab.injected_armor'
+    version = project.catkin.pkg.version
+}
+
+subprojects {
+
+      task deployApp() << {
+          if (project.hasProperty("installApp")){
+              //if( "$project.name" == mainModuleName) {
+              File binDir = new File(project.projectDir, '/bin')
+              if (! binDir.isDirectory()) {
+                println "Creating $binDir directory"
+                binDir.mkdirs()
+              }
+              File link = new File(binDir, "execute")
+              File target = new File(project.projectDir, "build/install/$project.name/bin/$project.name")
+              println "Creating symlink from $link.absolutePath to $target.absolutePath"
+              ant.symlink(link: link.absolutePath, resource: target.absolutePath, overwrite: true)
+          } else println( "Do NOT creating executable from \"$project.name\" since does not have installApp task")
+          // for having installAPP you need to add
+          // apply plugin: 'application'
+          // mainClassName = 'org.ros.RosRun'
+          // to the build.gradle in the submodule that is a ROS node or service (not in other)
+      }
+    /* 
+     * The ros plugin configures a few things:
+     * 
+     *  - local deployment repository : where it dumps the jars and packaged artifacts)
+     *  - local maven repositories    : where it finds your locally installed/built artifacts) 
+     *  - external maven repositories : where it goes looking if it can't find dependencies locally
+     * 
+     * To modify, or add repos to the default external maven repositories list, pull request against this code:
+     * 
+     *   https://github.com/rosjava/rosjava_bootstrap/blob/indigo/gradle_plugins/src/main/groovy/org/ros/gradle_plugins/RosPlugin.groovy#L31
+     */
+    apply plugin: "ros-java"
+    /*
+     * Some IDE support if you use it.
+     */
+    /* apply plugin: "eclipse" */
+    apply plugin: "idea"
+
+    allprojects {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+/*
+  Some useful tasks:
+
+    install: deploys jar's to MavenLocal() (i.e. ~/.m2/repository)
+    publishMavenJavaPublicationToMavenRepository : deploys jar's to devel/share/maven
+    installApp : assembles java apps in the _subproject_/build directories.
+
+  Note that these are dependent on the type of project (e.g. installApp is only valid for
+  java binary subprojects, while publishMavenJav... is only added once a subproject is included.
+  If you're using catkin_make, this is not important, since it will use the task list specified
+  in CMakeLists.txt
+*/
+defaultTasks 'tasks'
