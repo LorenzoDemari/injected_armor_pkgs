@@ -156,7 +156,7 @@ The complete list of **commands** and **directives** can be found here:
 | **204**                  | *Debug only, command defined but not implemented*               |
 | **205**                  | *Non-existing command/specification*                            |
 
-##New Commands
+## New Commands
 
 We have changed two files:
 - [ARMORCommandExecutive.java](https://github.com/JJoeNapoli/injected_armor_pkgs/blob/master/injected_armor/armor/src/main/java/it/emarolab/armor/ARMORCommandExecutive.java)
@@ -172,7 +172,7 @@ In our case we created SCENE_UPDATED_ and SCENE_RETRIEVER_ command in order to c
 |MSG primary_command_spec|`UPDATED`|`RETRIEVED`|
 |MSG secondary_command_spec|`NULL`|`NULL`|
 |function called|`sceneUpdated`|`sceneRetrieved`|
-|classes called|`Storing(OWLReferences) Consolidating(OWLReferences) Forgetting(OWLReferences)`|`Retrieving(OWLReferences) Consolidating(OWLReferences) Forgetting(OWLReferences)`|
+|classes called|`Storing(OWLReferences)  Consolidating(OWLReferences)  Forgetting(OWLReferences)`|`Retrieving(OWLReferences)  Consolidating(OWLReferences)  Forgetting(OWLReferences)`|
 |link|[sceneUpdated](https://github.com/JJoeNapoli/injected_armor_pkgs/blob/67d058144604a985f8474d2cc5cd6e32e06bb43d/injected_armor/armor/src/main/java/it/emarolab/armor/ARMORCommandUtility.java#L239-L264)|[sceneRetrieved](https://github.com/JJoeNapoli/injected_armor_pkgs/blob/67d058144604a985f8474d2cc5cd6e32e06bb43d/injected_armor/armor/src/main/java/it/emarolab/armor/ARMORCommandUtility.java#L270-L293)|       
 
 
