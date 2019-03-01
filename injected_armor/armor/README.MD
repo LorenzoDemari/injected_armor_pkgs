@@ -149,12 +149,32 @@ The complete list of **commands** and **directives** can be found here:
 | **1XX**                  | *Warning*                                                       |
 | **101**                  | *Unsupported data type*                                         |
 | **102**                  | *Reference busy*                                                |
-| **2XX**                  | *Error*                                                         |
+| **2XX**                  | *Error*                                                          |
 | **201**                  | *Malformed request, unspecified reference name*                 |
 | **202**                  | *Malformed request, unspecified command*                        |
 | **203**                  | *Cannot mount client on specified reference*                    |
 | **204**                  | *Debug only, command defined but not implemented*               |
 | **205**                  | *Non-existing command/specification*                            |
+
+##New Commands
+
+We have changed two files:
+- [ARMORCommandExecutive.java](https://github.com/JJoeNapoli/injected_armor_pkgs/blob/master/injected_armor/armor/src/main/java/it/emarolab/armor/ARMORCommandExecutive.java)
+- [ARMORCommandUtility.java](https://github.com/JJoeNapoli/injected_armor_pkgs/blob/master/injected_armor/armor/src/main/java/it/emarolab/armor/ARMORCommandUtility.java)
+
+in which we developed two functions in order to catch two new commands sent by the client.
+In our case we created SCENE_UPDATED_ and SCENE_RETRIEVER_ command in order to control respectively the Storing, Consolidating, Forgetting Reasoner and the Retrieving, Consolidating, Forgetting Reasoner.  
+
+ 
+|Field|[SCENE_UPDATED_](https://github.com/JJoeNapoli/injected_armor_pkgs/blob/67d058144604a985f8474d2cc5cd6e32e06bb43d/injected_armor/armor/src/main/java/it/emarolab/armor/ARMORCommandExecutive.java#L131)|[SCENE_RETRIEVED_](https://github.com/JJoeNapoli/injected_armor_pkgs/blob/67d058144604a985f8474d2cc5cd6e32e06bb43d/injected_armor/armor/src/main/java/it/emarolab/armor/ARMORCommandExecutive.java#L135)|
+|---|---|----|
+|MSG command|`SCENE`|`SCENE`|
+|MSG primary_command_spec|`UPDATED`|`RETRIEVED`|
+|MSG secondary_command_spec|`NULL`|`NULL`|
+|function called|`sceneUpdated`|`sceneRetrieved`|
+|classes called|`Storing(OWLReferences) Consolidating(OWLReferences) Forgetting(OWLReferences)`|`Retrieving(OWLReferences) Consolidating(OWLReferences) Forgetting(OWLReferences)`|
+|link|[sceneUpdated](https://github.com/JJoeNapoli/injected_armor_pkgs/blob/67d058144604a985f8474d2cc5cd6e32e06bb43d/injected_armor/armor/src/main/java/it/emarolab/armor/ARMORCommandUtility.java#L239-L264)|[sceneRetrieved](https://github.com/JJoeNapoli/injected_armor_pkgs/blob/67d058144604a985f8474d2cc5cd6e32e06bb43d/injected_armor/armor/src/main/java/it/emarolab/armor/ARMORCommandUtility.java#L270-L293)|       
+
 
 
 ## Publication
