@@ -125,6 +125,15 @@ class ARMORCommandExecutive {
         commands.put("LOG_SCREEN_ON",            (() -> ARMORCommandUtility.logToScreenOn                         (request, response)));
         commands.put("LOG_SCREEN_OFF",           (() -> ARMORCommandUtility.logToScreenOff                        (request, response)));
 
+
+        /////////////////      SCENE UPDATED        /////////////////
+
+        commands.put("SCENE_UPDATED_",           (() -> ARMORCommandUtility.sceneUpdated                          (request, response, connectedNode)));
+
+        /////////////////      SCENE RETRIEVED        /////////////////
+
+        commands.put("SCENE_RETRIEVED_",           (() -> ARMORCommandUtility.sceneRetrieved                      (request, response, connectedNode)));
+
         /////////////////       QUERY COMMANDS       /////////////////
 
         commands.put("QUERY_IND_",               (() -> ARMORCommandsQuery.queryInd                             (request, response, fullIRIName)));

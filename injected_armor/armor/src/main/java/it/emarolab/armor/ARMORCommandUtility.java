@@ -3,10 +3,24 @@ package it.emarolab.armor;
 import injected_armor_msgs.ArmorDirectiveReq;
 import injected_armor_msgs.ArmorDirectiveRes;
 import it.emarolab.amor.owlDebugger.Logger;
-import it.emarolab.amor.owlInterface.*;
+import it.emarolab.amor.owlInterface.OWLReferences;
+import it.emarolab.amor.owlInterface.OWLReferencesInterface;
+import it.emarolab.sit.SITBase;
+import it.emarolab.sit.reasonerCore.Consolidating;
+import it.emarolab.sit.reasonerCore.Forgetting;
+import it.emarolab.sit.reasonerCore.Retrieving;
+import it.emarolab.sit.reasonerCore.Storing;
+import org.apache.jena.base.Sys;
 import org.ros.node.ConnectedNode;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import static it.emarolab.armor.ARMORCommandsUtils.getStringListFromQuery;
 import static it.emarolab.armor.ARMORCommandsUtils.setResponse;
+import static it.emarolab.sit.SITBase.ONTO_FILE_SCORE;
+import static it.emarolab.sit.SITBase.ONTO_IRI;
 
 /**
  * Project: a ROS Multi Ontology Reference - aRMOR <br>
@@ -26,7 +40,10 @@ import static it.emarolab.armor.ARMORCommandsUtils.setResponse;
  */
 
 
-class ARMORCommandUtility {
+class ARMORCommandUtility implements SITBase {
+
+    private static final String ONTO_NAME = "ONTO_NAME"; // an arbitrary name to refer the ontology
+
 
 
     /////////////////  SYSTEM UTILITIES COMMANDS  /////////////////
@@ -215,4 +232,65 @@ class ARMORCommandUtility {
         setResponse(request.getReferenceName(), true, 0, "", response);
         return response;
     }
+
+
+    /////////////////      SCENE UPDATED        /////////////////
+
+    static ArmorDirectiveRes sceneUpdated(ArmorDirectiveReq request, ArmorDirectiveRes response,
+                                          ConnectedNode connectedNode){
+
+
+        OWLReferences ontoRef = (OWLReferences)
+                OWLReferencesInterface.OWLReferencesContainer.getOWLReferences(request.getReferenceName());
+
+
+        Storing Storer= new Storing(ontoRef);
+        String resultStore= Storer.apply();
+        System.out.println("Store? "+ resultStore);
+
+
+        Consolidating Consolidator= new Consolidating(ontoRef);
+        String resultConsolidate= Consolidator.Consolidate();
+        System.out.println("Consolidate? "+ resultConsolidate);
+
+
+        Forgetting Forgetter= new Forgetting(ontoRef);
+        String resultForget= Forgetter.Forget();
+        System.out.println("Forget?" + resultForget);
+
+
+        setResponse(request.getReferenceName(), true, 0, "", response);
+        return response;
+    }
+
+
+    /////////////////      SCENE RETRIEVED        /////////////////
+
+
+    static ArmorDirectiveRes sceneRetrieved(ArmorDirectiveReq request, ArmorDirectiveRes response,
+                                            ConnectedNode connectedNode){
+
+
+        OWLReferences ontoRef = (OWLReferences)
+                OWLReferencesInterface.OWLReferencesContainer.getOWLReferences(request.getReferenceName());
+
+        Retrieving Retriever= new Retrieving(ontoRef);
+        String resultRetrieve= Retriever.Retrieve();
+        System.out.println("Retrieve?" + resultRetrieve);
+
+
+        Consolidating Consolidator= new Consolidating(ontoRef);
+        String resultConsolidate= Consolidator.Consolidate();
+        System.out.println("Consolidate? "+ resultConsolidate);
+
+
+        Forgetting Forgetter= new Forgetting(ontoRef);
+        String resultForget= Forgetter.Forget();
+        System.out.println("Forget?" + resultForget);
+
+        setResponse(request.getReferenceName(), true, 0, "", response);
+
+        return response;
+    }
+
 }
