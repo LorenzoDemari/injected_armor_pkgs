@@ -76,18 +76,6 @@ Run `catkin_make` and test the basic armor service with
   - As mentioned above, this belongs less capabilities than the ARMOR package; however, AMOR package is considered a complete library of helper functions for OWL ontologies.
   
   
-  /*
-  - Installation from repositories:
-    -  We can chose either “Download ZIP” or copy the link showed and, from the terminal, type:
-    
-    ``` 
-    > git clone https://github.com/EmaroLab/multi_ontology_reference.git 
-    ```
-    
-    - We can see the “armor” package in our source folder. 
-  
-  */
-  
     
 - **Intellij IDEA:**
   - Link:[IDEA](https://www.jetbrains.com/idea/).
