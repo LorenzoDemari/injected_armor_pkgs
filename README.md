@@ -1,8 +1,8 @@
 <p align="center"> 
-<img src="https://github.com/JJoeNapoli/injected_armor_pkgs/blob/master/SIT_scheme.jpg">
+<img src="https://github.com/JJoeNapoli/injected_armor_pkgs/blob/master/Edited_sit_algorithm.jpeg">
 </p>
 <p align="center"> 
-<img src="https://github.com/JJoeNapoli/injected_armor_pkgs/blob/master/service_scheme.jpg">
+<img src="https://github.com/JJoeNapoli/injected_armor_pkgs/blob/master/Architecture_human_like_memory.jpeg">
 </p>
 
 # injected_armor
