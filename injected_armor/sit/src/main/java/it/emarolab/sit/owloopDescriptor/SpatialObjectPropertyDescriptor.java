@@ -4,12 +4,9 @@ import it.emarolab.amor.owlInterface.OWLReferences;
 import it.emarolab.owloop.aMORDescriptor.MORAxioms;
 import it.emarolab.owloop.aMORDescriptor.MORObjectProperty;
 import it.emarolab.owloop.aMORDescriptor.utility.MORObjectPropertyBase;
-import it.emarolab.owloop.aMORDescriptor.utility.objectProperty.MORFullObjectProperty;
 import it.emarolab.sit.SITBase;
-import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 
-import java.awt.font.ImageGraphicAttribute;
 import java.util.ArrayList;
 import java.util.List;
 

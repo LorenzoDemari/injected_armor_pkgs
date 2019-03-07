@@ -1,0 +1,1828 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/emaroLab/luca-buoncompagni/sit"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/emaroLab/luca-buoncompagni/sit">
+    <Prefix name="" IRI="http://www.semanticweb.org/emaroLab/luca-buoncompagni/sit"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="sit" IRI="http://www.semanticweb.org/emaroLab/luca-buoncompagni/sit#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Declaration>
+        <Class IRI="#Cone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cylinder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeometricPrimitive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Orientable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Plane"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RealObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Scene"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Score"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sphere"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has-scene_isAboveOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has-scene_isAlongXWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has-scene_isAlongYWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has-scene_isAlongZ"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has-scene_isBehindOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has-scene_isCoaxialWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has-scene_isParallelWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has-scene_isPerpendicularWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has-scene_isRightOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAboveOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAlongXWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAlongYWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAlongZWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isBehindOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isBelowOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCoaxialWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInFrontOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLeftOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isParallelWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPerpendicularWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRightOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#defines-cardinality_"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#defines-th_alignedX"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#defines-th_alignedY"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#defines-th_alignedZ"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#defines-th_coaxiality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#defines-th_parallelism"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#defines-th_perpendicularity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-cone_apexX"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-cone_apexY"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-cone_apexZ"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-cone_height"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-cone_radius"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-cylinder-pointX"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-cylinder-pointY"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-cylinder-pointZ"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-cylinder_height"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-cylinder_radius"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_axisX"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_axisY"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_axisZ"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_centerX"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_centerY"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_centerZ"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_height"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_hessian"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_pointX"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_pointY"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_pointZ"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-geometric_radius"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has-sphere_radius"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRetrievingCounter"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasScore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStoringCounter"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_time"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Define-Recognition"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Cone"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Orientable"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-cone_apexX"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-cone_apexY"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-cone_apexZ"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-cone_height"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-cone_radius"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Cylinder"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Orientable"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-cylinder-pointX"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-cylinder-pointY"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-cylinder-pointZ"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-cylinder_height"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-cylinder_radius"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#GeometricPrimitive"/>
+        <ObjectIntersectionOf>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-geometric_centerX"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-geometric_centerY"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-geometric_centerZ"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Orientable"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#GeometricPrimitive"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-geometric_axisX"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-geometric_axisY"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-geometric_axisZ"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Plane"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Orientable"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-geometric_hessian"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Score"/>
+        <ObjectIntersectionOf>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasRetrievingCounter"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasScore"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasStoringCounter"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Sphere"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#GeometricPrimitive"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#has-sphere_radius"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Cone"/>
+        <Class IRI="#Orientable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cylinder"/>
+        <Class IRI="#Orientable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeometricPrimitive"/>
+        <Class IRI="#RealObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Orientable"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Plane"/>
+        <Class IRI="#Orientable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sphere"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Cone"/>
+        <Class IRI="#Cylinder"/>
+        <Class IRI="#Plane"/>
+        <Class IRI="#Sphere"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Orientable"/>
+        <Class IRI="#Sphere"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Parameter"/>
+        <Class IRI="#RealObject"/>
+        <Class IRI="#Scene"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#Define-Recognition"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#defines-th_alignedX"/>
+        <NamedIndividual IRI="#Define-Recognition"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.05</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#defines-th_alignedY"/>
+        <NamedIndividual IRI="#Define-Recognition"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.05</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#defines-th_alignedZ"/>
+        <NamedIndividual IRI="#Define-Recognition"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.05</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#defines-th_coaxiality"/>
+        <NamedIndividual IRI="#Define-Recognition"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.05</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#defines-th_parallelism"/>
+        <NamedIndividual IRI="#Define-Recognition"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#defines-th_perpendicularity"/>
+        <NamedIndividual IRI="#Define-Recognition"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.7</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has-scene_isAboveOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has-scene_isAlongXWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has-scene_isAlongYWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has-scene_isAlongZ"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has-scene_isBehindOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has-scene_isCoaxialWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has-scene_isParallelWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has-scene_isPerpendicularWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has-scene_isRightOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAboveOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAlongXWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAlongYWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAlongZWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isBehindOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isBelowOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isCoaxialWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isInFrontOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isLeftOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isParallelWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPerpendicularWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isRightOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isAboveOf"/>
+        <ObjectProperty IRI="#isBelowOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isBehindOf"/>
+        <ObjectProperty IRI="#isInFrontOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isLeftOf"/>
+        <ObjectProperty IRI="#isRightOf"/>
+    </InverseObjectProperties>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isAlongXWith"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isAlongYWith"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isAlongZWith"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isCoaxialWith"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isParallelWith"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isPerpendicularWith"/>
+    </SymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isAboveOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isAlongXWith"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isAlongYWith"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isAlongZWith"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isBehindOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isBelowOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isCoaxialWith"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isInFrontOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isLeftOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isParallelWith"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isPerpendicularWith"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isRightOf"/>
+    </TransitiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#has-scene_isAboveOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#has-scene_isAlongXWith"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#has-scene_isAlongYWith"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#has-scene_isAlongZ"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#has-scene_isBehindOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#has-scene_isCoaxialWith"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#has-scene_isParallelWith"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#has-scene_isPerpendicularWith"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#has-scene_isRightOf"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has-scene_isAboveOf"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Scene"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#has-scene_isAboveOf"/>
+                <Class IRI="#GeometricPrimitive"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has-scene_isAlongXWith"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Scene"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#has-scene_isAlongXWith"/>
+                <Class IRI="#GeometricPrimitive"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has-scene_isAlongYWith"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Scene"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#has-scene_isAlongYWith"/>
+                <Class IRI="#GeometricPrimitive"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has-scene_isAlongZ"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Scene"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#has-scene_isAlongZ"/>
+                <Class IRI="#GeometricPrimitive"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has-scene_isBehindOf"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Scene"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#has-scene_isBehindOf"/>
+                <Class IRI="#GeometricPrimitive"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has-scene_isCoaxialWith"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Scene"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#has-scene_isCoaxialWith"/>
+                <Class IRI="#GeometricPrimitive"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has-scene_isParallelWith"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Scene"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#has-scene_isParallelWith"/>
+                <Class IRI="#GeometricPrimitive"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has-scene_isPerpendicularWith"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Scene"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#has-scene_isPerpendicularWith"/>
+                <Class IRI="#GeometricPrimitive"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has-scene_isRightOf"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Scene"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#has-scene_isRightOf"/>
+                <Class IRI="#GeometricPrimitive"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAboveOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAlongXWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAlongYWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAlongZWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBehindOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBelowOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCoaxialWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isInFrontOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLeftOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isParallelWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPerpendicularWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRightOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has-scene_isAboveOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has-scene_isAlongXWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has-scene_isAlongYWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has-scene_isAlongZ"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has-scene_isBehindOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has-scene_isCoaxialWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has-scene_isParallelWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has-scene_isPerpendicularWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has-scene_isRightOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAboveOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAlongXWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAlongYWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAlongZWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isBehindOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isBelowOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCoaxialWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isInFrontOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLeftOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isParallelWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPerpendicularWith"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRightOf"/>
+        <Class IRI="#GeometricPrimitive"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#defines-cardinality_"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#defines-th_alignedX"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#defines-th_alignedY"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#defines-th_alignedZ"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#defines-th_coaxiality"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#defines-th_parallelism"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#defines-th_perpendicularity"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-cone_apexX"/>
+        <DataProperty IRI="#has-geometric_pointX"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-cone_apexY"/>
+        <DataProperty IRI="#has-geometric_pointY"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-cone_apexZ"/>
+        <DataProperty IRI="#has-geometric_pointZ"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-cone_height"/>
+        <DataProperty IRI="#has-geometric_height"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-cone_radius"/>
+        <DataProperty IRI="#has-geometric_radius"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-cylinder-pointX"/>
+        <DataProperty IRI="#has-geometric_pointX"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-cylinder-pointY"/>
+        <DataProperty IRI="#has-geometric_pointY"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-cylinder-pointZ"/>
+        <DataProperty IRI="#has-geometric_pointZ"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-cylinder_height"/>
+        <DataProperty IRI="#has-geometric_height"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-cylinder_radius"/>
+        <DataProperty IRI="#has-geometric_radius"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_axisX"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_axisY"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_axisZ"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_centerX"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_centerY"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_centerZ"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_height"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_hessian"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_pointX"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_pointY"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_pointZ"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-geometric_radius"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has-sphere_radius"/>
+        <DataProperty IRI="#has-geometric_radius"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_id"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_time"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#defines-th_alignedX"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#defines-th_alignedX"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#defines-th_alignedY"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#defines-th_alignedY"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#defines-th_alignedZ"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#defines-th_alignedZ"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#defines-th_coaxiality"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#defines-th_coaxiality"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#defines-th_parallelism"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#defines-th_parallelism"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#defines-th_perpendicularity"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#defines-th_perpendicularity"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_axisX"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_axisX"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_axisY"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_axisY"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_axisZ"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_axisZ"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_centerX"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_centerX"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_centerY"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_centerY"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_centerZ"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_centerZ"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_height"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_height"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_hessian"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_hessian"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_pointX"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_pointX"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_pointY"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_pointY"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_pointZ"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_pointZ"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has-geometric_radius"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has-geometric_radius"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRetrievingCounter"/>
+        <Class IRI="#Score"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasScore"/>
+        <Class IRI="#Score"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStoringCounter"/>
+        <Class IRI="#Score"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has_id"/>
+            <Datatype abbreviatedIRI="xsd:long"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_time"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#has_time"/>
+            <Datatype abbreviatedIRI="xsd:long"/>
+        </DataExactCardinality>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#defines-th_alignedX"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#defines-th_alignedY"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#defines-th_alignedZ"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#defines-th_coaxiality"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#defines-th_parallelism"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#defines-th_perpendicularity"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_axisX"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_axisY"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_axisZ"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_centerX"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_centerY"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_centerZ"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_height"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_hessian"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_pointX"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_pointY"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_pointZ"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has-geometric_radius"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRetrievingCounter"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasScore"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStoringCounter"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_id"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_time"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>RIGHT</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_alignedX"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#e"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerX"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#ax"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerX"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#bx"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:greaterThan">
+                <Variable IRI="#ab"/>
+                <Variable IRI="#e"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#ab"/>
+                <Variable IRI="#bx"/>
+                <Variable IRI="#ax"/>
+            </BuiltInAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isRightOf"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_alignedX"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#ex"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_alignedY"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#ey"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerX"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#ax"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerX"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#bx"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerY"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#ay"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerY"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#by"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:abs">
+                <Variable IRI="#absx"/>
+                <Variable IRI="#abx"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:abs">
+                <Variable IRI="#absy"/>
+                <Variable IRI="#aby"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="#absx"/>
+                <Variable IRI="#ex"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="#absy"/>
+                <Variable IRI="#ey"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#abx"/>
+                <Variable IRI="#ax"/>
+                <Variable IRI="#bx"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#aby"/>
+                <Variable IRI="#ay"/>
+                <Variable IRI="#by"/>
+            </BuiltInAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isAlongZWith"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_alignedX"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#ex"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_alignedZ"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#ez"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerX"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#ax"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerX"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#bx"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerZ"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#az"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerZ"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#bz"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:abs">
+                <Variable IRI="#absx"/>
+                <Variable IRI="#abx"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:abs">
+                <Variable IRI="#absz"/>
+                <Variable IRI="#abz"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="#absx"/>
+                <Variable IRI="#ex"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="#absz"/>
+                <Variable IRI="#ez"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#abx"/>
+                <Variable IRI="#ax"/>
+                <Variable IRI="#bx"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#abz"/>
+                <Variable IRI="#az"/>
+                <Variable IRI="#bz"/>
+            </BuiltInAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isAlongYWith"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>FRONT</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_alignedY"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#e"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerY"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#ay"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerY"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#by"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:greaterThan">
+                <Variable IRI="#ab"/>
+                <Variable IRI="#e"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#ab"/>
+                <Variable IRI="#by"/>
+                <Variable IRI="#ay"/>
+            </BuiltInAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isBehindOf"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_alignedY"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#ey"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_alignedZ"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#ez"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerY"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#ay"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerY"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#by"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerZ"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#az"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerZ"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#bz"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:abs">
+                <Variable IRI="#absy"/>
+                <Variable IRI="#aby"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:abs">
+                <Variable IRI="#absz"/>
+                <Variable IRI="#abz"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="#absy"/>
+                <Variable IRI="#ey"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="#absz"/>
+                <Variable IRI="#ez"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#aby"/>
+                <Variable IRI="#ay"/>
+                <Variable IRI="#by"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#abz"/>
+                <Variable IRI="#az"/>
+                <Variable IRI="#bz"/>
+            </BuiltInAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isAlongXWith"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>ABOVE</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#GeometricPrimitive"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_alignedZ"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#e"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerZ"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#az"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_centerZ"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#bz"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:greaterThan">
+                <Variable IRI="#ab"/>
+                <Variable IRI="#e"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#ab"/>
+                <Variable IRI="#bz"/>
+                <Variable IRI="#az"/>
+            </BuiltInAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isAboveOf"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Orientable"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Orientable"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_parallelism"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#e"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisX"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#ax"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisX"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#bx"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisY"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#ay"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisY"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#by"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisZ"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#az"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisZ"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#bz"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:abs">
+                <Variable IRI="#q1s"/>
+                <Variable IRI="#q1"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:abs">
+                <Variable IRI="#q2s"/>
+                <Variable IRI="#q2"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:abs">
+                <Variable IRI="#q3s"/>
+                <Variable IRI="#q3"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="#q1s"/>
+                <Variable IRI="#e"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="#q2s"/>
+                <Variable IRI="#e"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="#q3s"/>
+                <Variable IRI="#e"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:multiply">
+                <Variable IRI="#p11"/>
+                <Variable IRI="#ay"/>
+                <Variable IRI="#bz"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:multiply">
+                <Variable IRI="#p12"/>
+                <Variable IRI="#az"/>
+                <Variable IRI="#by"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:multiply">
+                <Variable IRI="#p21"/>
+                <Variable IRI="#az"/>
+                <Variable IRI="#bx"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:multiply">
+                <Variable IRI="#p22"/>
+                <Variable IRI="#ax"/>
+                <Variable IRI="#bz"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:multiply">
+                <Variable IRI="#p31"/>
+                <Variable IRI="#ax"/>
+                <Variable IRI="#by"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:multiply">
+                <Variable IRI="#p32"/>
+                <Variable IRI="#ay"/>
+                <Variable IRI="#bx"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#q1"/>
+                <Variable IRI="#p11"/>
+                <Variable IRI="#p12"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#q2"/>
+                <Variable IRI="#p21"/>
+                <Variable IRI="#p22"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="#q3"/>
+                <Variable IRI="#p31"/>
+                <Variable IRI="#p32"/>
+            </BuiltInAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isParallelWith"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Orientable"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Orientable"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#defines-th_perpendicularity"/>
+                <NamedIndividual IRI="#Define-Recognition"/>
+                <Variable IRI="#e"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisX"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#ax"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisX"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#bx"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisY"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#ay"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisY"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#by"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisZ"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#az"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#has-geometric_axisZ"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#bz"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:abs">
+                <Variable IRI="#qs"/>
+                <Variable IRI="#q2"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:add">
+                <Variable IRI="#q"/>
+                <Variable IRI="#p3"/>
+                <Variable IRI="#p2"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:add">
+                <Variable IRI="#q2"/>
+                <Variable IRI="#p1"/>
+                <Variable IRI="#q"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="#qs"/>
+                <Variable IRI="#e"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:multiply">
+                <Variable IRI="#p1"/>
+                <Variable IRI="#ax"/>
+                <Variable IRI="#bx"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:multiply">
+                <Variable IRI="#p2"/>
+                <Variable IRI="#ay"/>
+                <Variable IRI="#by"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:multiply">
+                <Variable IRI="#p3"/>
+                <Variable IRI="#az"/>
+                <Variable IRI="#bz"/>
+            </BuiltInAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isPerpendicularWith"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

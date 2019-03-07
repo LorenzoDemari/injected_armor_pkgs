@@ -702,6 +702,7 @@ private OWLEnquirer enquirer;
 
 
         // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[   CLASS PRIVATE FIELDS   ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
         /**
          * This static map contains all the OWL references instantiated by the system and stored in this class.
          * In particular, this map is an instance of {@link ConcurrentHashMap}, please see its specification
@@ -742,7 +743,7 @@ private OWLEnquirer enquirer;
          * @return {@code false} if the map does not contain an object with name {@link OWLReferencesInterface#getReferenceName()}
          * and no action was taken. {@code true} otherwise.
          */
-        private static Boolean removeInstance(OWLReferencesInterface instance){
+        public static Boolean removeInstance(OWLReferencesInterface instance){
             String refName = instance.getReferenceName();
             if( isInstance( refName)){
                 allReferences.remove( refName);
@@ -780,7 +781,9 @@ private OWLEnquirer enquirer;
         public static OWLReferencesInterface getOWLReferences(String referenceName){
             return( allReferences.get( referenceName));
         }
-
+        public static Map<String, OWLReferencesInterface> getAllReferences() {
+            return allReferences;
+        }
         /**
          * @return all reference names stored in ({@link #allReferences}).
          */

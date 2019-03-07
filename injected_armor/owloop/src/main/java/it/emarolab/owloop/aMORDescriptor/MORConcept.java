@@ -1319,14 +1319,26 @@ public interface MORConcept
 
                 if ( to.getToAdd().size() > 0 | to.getToRemove().size() > 0){
                     //noinspection unchecked
-                    changes.addAll( getOntology().convertSuperClassesToEquivalentClass( getInstance()));
+                    changes.addAll( getOntology().convertEquivalentClassesToSuperClasses( getInstance()));
+                    //changes.addAll( getOntology().convertSuperClassesToEquivalentClass( getInstance()));
+
+//                    getOntology().applyOWLManipulatorChanges( changes);
+//                    changes.clear();
+
                     for (SemanticRestriction r : to.getToRemove())
                         changes.add( getOntology().removeRestriction( r));
+//                    getOntology().applyOWLManipulatorChanges( changes);
+//                    changes.clear();
 
                     for (SemanticRestriction a : to.getToAdd())
                         changes.add(getOntology().addRestriction(a));
+//                    getOntology().applyOWLManipulatorChanges( changes);
+//                    changes.clear();
 
-                    changes.addAll(getOntology().convertSuperClassesToEquivalentClass(getInstance(), getDefinitionConcept()));
+                    changes.addAll(getOntology().convertSuperClassesToEquivalentClass(getInstance()));
+                    //changes.addAll(getOntology().convertSuperClassesToEquivalentClass(getInstance(), getDefinitionConcept()));
+//                    getOntology().applyOWLManipulatorChanges( changes);
+//                    changes.clear();
                 }
                 return getChangingIntent(to, changes);
             } catch (Exception e){

@@ -5,7 +5,6 @@ import it.emarolab.owloop.aMORDescriptor.MORAxioms;
 import it.emarolab.owloop.aMORDescriptor.MORIndividual;
 import it.emarolab.owloop.aMORDescriptor.utility.MORIndividualBase;
 import it.emarolab.owloop.aMORDescriptor.utility.dataProperty.MORHierarchicalDataProperty;
-import it.emarolab.owloop.aMORDescriptor.utility.objectProperty.MORHierarchicalObjectProperty;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 

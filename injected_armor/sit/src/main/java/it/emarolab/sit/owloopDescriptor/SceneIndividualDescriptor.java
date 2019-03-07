@@ -1,5 +1,6 @@
 package it.emarolab.sit.owloopDescriptor;
 
+import it.emarolab.amor.owlInterface.OWLLibrary;
 import it.emarolab.amor.owlInterface.OWLReferences;
 import it.emarolab.owloop.aMORDescriptor.MORAxioms;
 import it.emarolab.owloop.aMORDescriptor.MORIndividual;
@@ -8,6 +9,7 @@ import it.emarolab.owloop.aMORDescriptor.utility.dataProperty.MORHierarchicalDat
 import it.emarolab.owloop.aMORDescriptor.utility.objectProperty.MORHierarchicalObjectProperty;
 import it.emarolab.sit.SITBase;
 import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 
 import java.util.List;
@@ -108,6 +110,7 @@ public class SceneIndividualDescriptor
         cardinality = 0; // hp: all object properties are spatial relations
         for ( MORAxioms.ObjectSemantic s : getObjectSemantics())
             cardinality += s.getValues().size();
+        cardinality=cardinality/2;
     }
 
     /**
@@ -182,4 +185,6 @@ public class SceneIndividualDescriptor
                 "," + NL + "\t⊢ " + dataLinks +
                 NL + "}";
     }
+
+
 }

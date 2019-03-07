@@ -3,6 +3,7 @@ package it.emarolab.amor.owlInterface;
 import it.emarolab.amor.owlDebugger.Logger;
 import it.emarolab.amor.owlDebugger.Logger.LoggerFlag;
 import it.emarolab.amor.owlInterface.SemanticRestriction.ApplyingRestriction;
+//import it.emarolab.sit.owloopDescriptor.SceneClassDescriptor;
 import org.apache.jena.query.QuerySolution;
 import org.semanticweb.owlapi.model.*;
 
@@ -3644,5 +3645,6 @@ public class OWLReferences extends OWLReferencesInterface{
         protected void setWorkInitialTime() {
             this.workInitialTime = System.nanoTime();
         }
+
     }
 }
