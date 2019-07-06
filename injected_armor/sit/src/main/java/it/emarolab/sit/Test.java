@@ -117,7 +117,7 @@ public class Test
 
 
 
-        recognition1.getSceneDescriptor().addData(DATA_PROPERTY.SCORE, 0.6);
+        recognition1.getSceneDescriptor().addData(Dictionary_reasoner.SCORE, 0.6);
 
 
 
@@ -229,7 +229,7 @@ public class Test
             System.out.println(l.getSemantic() + " " +ff2);
         }
 
-        sceneIndDescr2.addData( DATA_PROPERTY.STORING_COUNTER, 1);
+        sceneIndDescr2.addData( Dictionary_reasoner.STORING_COUNTER, 1);
         sceneIndDescr2.writeSemantic();
 
 
@@ -344,7 +344,7 @@ public class Test
             }
         }
 
-        recognition3.getSceneDescriptor().addData(DATA_PROPERTY.SCORE, 0.8);
+        recognition3.getSceneDescriptor().addData(Dictionary_reasoner.SCORE, 0.8);
 
         //  sceneIndDescr.addData( DATA_PROPERTY.SCORE, 0.4);
         recognition3.getSceneDescriptor().addData("DATA_PROPERTY.STORING_COUNTER", 60);
@@ -359,15 +359,15 @@ public class Test
         for( MORAxioms.DataSemantic l : sceneIndDescr.getDataSemantics()){
             String f =  l.getValues().toString().replace("{","").replace("}","");
             Float ff = Float.valueOf(f);
-            if (l.getSemantic().toString().contains(DATA_PROPERTY.SCORE)) {
+            if (l.getSemantic().toString().contains(Dictionary_reasoner.SCORE)) {
                  hascore = ff;
-                System.out.println(DATA_PROPERTY.SCORE + " " + ff);
+                System.out.println(Dictionary_reasoner.SCORE + " " + ff);
             }
         }
         hascore+=1;
-        recognition3.getSceneDescriptor().removeData(DATA_PROPERTY.SCORE);
+        recognition3.getSceneDescriptor().removeData(Dictionary_reasoner.SCORE);
 
-        recognition3.getSceneDescriptor().addData(DATA_PROPERTY.SCORE, hascore);
+        recognition3.getSceneDescriptor().addData(Dictionary_reasoner.SCORE, hascore);
         recognition3.getSceneDescriptor().writeSemantic();
 
 

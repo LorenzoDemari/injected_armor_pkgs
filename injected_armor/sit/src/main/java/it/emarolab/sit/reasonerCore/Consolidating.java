@@ -2,6 +2,7 @@ package it.emarolab.sit.reasonerCore;
 
 import it.emarolab.amor.owlInterface.OWLReferences;
 import it.emarolab.owloop.aMORDescriptor.MORAxioms;
+import it.emarolab.sit.Dictionary_reasoner;
 import it.emarolab.sit.SITBase;
 import it.emarolab.sit.owloopDescriptor.SceneClassDescriptor;
 import it.emarolab.sit.owloopDescriptor.SceneIndividualDescriptor;
@@ -75,11 +76,11 @@ public class Consolidating extends ReasonerBase implements GetBranch{
             SceneIndividualDescriptor indScoreDesc = new SceneIndividualDescriptor(i, ontoRef);
             indScoreDesc.readSemantic();
             indScoreDesc.getDataSemantics();
-            float temp= PropertyManager.ReadProperty(SITBase.DATA_PROPERTY.SCORE, indScoreDesc);
+            float temp= PropertyManager.ReadProperty(Dictionary_reasoner.SCORE, indScoreDesc);
             temp=temp/normFactor;
 
-            indScoreDesc.removeData(SITBase.DATA_PROPERTY.SCORE);
-            indScoreDesc.addData(SITBase.DATA_PROPERTY.SCORE, temp);
+            indScoreDesc.removeData(Dictionary_reasoner.SCORE);
+            indScoreDesc.addData(Dictionary_reasoner.SCORE, temp);
             indScoreDesc.writeSemantic();
 
 

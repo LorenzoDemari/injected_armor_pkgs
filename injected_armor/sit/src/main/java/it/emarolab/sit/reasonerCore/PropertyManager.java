@@ -1,6 +1,7 @@
 package it.emarolab.sit.reasonerCore;
 
 import it.emarolab.owloop.aMORDescriptor.MORAxioms;
+import it.emarolab.sit.Dictionary_reasoner;
 import it.emarolab.sit.SITBase;
 import it.emarolab.sit.owloopDescriptor.SceneIndividualDescriptor;
 import it.emarolab.sit.sceneRepresentation.FullSceneRepresentation;
@@ -38,9 +39,9 @@ public interface PropertyManager {
 
     static void InitalizeProperty(FullSceneRepresentation recognition) {
 
-        recognition.getSceneDescriptor().addData(SITBase.DATA_PROPERTY.SCORE, 0.5);
-        recognition.getSceneDescriptor().addData(SITBase.DATA_PROPERTY.STORING_COUNTER, 0);
-        recognition.getSceneDescriptor().addData(SITBase.DATA_PROPERTY.RETRIEVING_COUNTER, 0);
+        recognition.getSceneDescriptor().addData(Dictionary_reasoner.SCORE, 0.5);
+        recognition.getSceneDescriptor().addData(Dictionary_reasoner.STORING_COUNTER, 0);
+        recognition.getSceneDescriptor().addData(Dictionary_reasoner.RETRIEVING_COUNTER, 0);
         recognition.getSceneDescriptor().writeSemantic();
 
     }
@@ -49,7 +50,7 @@ public interface PropertyManager {
 
     static String EvaluateLevel(SceneIndividualDescriptor IndDescr) {
 
-        float score = PropertyManager.ReadProperty(SITBase.DATA_PROPERTY.SCORE, IndDescr);
+        float score = PropertyManager.ReadProperty(Dictionary_reasoner.SCORE, IndDescr);
         String level= "";
 
         if (score < 0.2)

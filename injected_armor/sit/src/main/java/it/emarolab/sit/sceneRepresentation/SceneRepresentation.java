@@ -341,12 +341,5 @@ public class SceneRepresentation
         return ID;
     }
 
-    public String getSceneIndName(){
-        long id=ID-1;
-        return INDIVIDUAL.SCENE +(id);
-    }
-
-
-
 }
 

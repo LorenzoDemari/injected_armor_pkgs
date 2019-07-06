@@ -436,25 +436,6 @@ public interface SITBase {
          */
         String ID = PREFIX_HAS + "id";
 
-        /**
-         * The name of the data property used to define the
-         * the score of each individuals Scene in the ontology.
-         */
-        String SCORE = "hasScore";
-
-        /**
-         * The name of the data property used to define the
-         * the storing counter of each individuals Scene in the ontology.
-         */
-        String STORING_COUNTER = "hasStoringCounter";
-
-        /**
-         * The name of the data property used to define the
-         * retrieving counter of each individuals Scene in the ontology.
-         */
-        String RETRIEVING_COUNTER = "hasRetrievingCounter";
-
-
 
 
 

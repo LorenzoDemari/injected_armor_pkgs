@@ -2,6 +2,7 @@ package it.emarolab.sit.reasonerCore;
 
 import it.emarolab.amor.owlInterface.OWLReferences;
 import it.emarolab.owloop.aMORDescriptor.MORAxioms;
+import it.emarolab.sit.Dictionary_reasoner;
 import it.emarolab.sit.SITBase;
 import it.emarolab.sit.owloopDescriptor.SceneClassDescriptor;
 import it.emarolab.sit.owloopDescriptor.SceneIndividualDescriptor;
@@ -56,7 +57,7 @@ public interface GetBranch {
             indSceneDesc.readSemantic();
 
 
-            scoreIndScene = PropertyManager.ReadProperty(SITBase.DATA_PROPERTY.SCORE, indSceneDesc);
+            scoreIndScene = PropertyManager.ReadProperty(Dictionary_reasoner.SCORE, indSceneDesc);
             sumSon = sumSon + scoreIndScene;
 
 
@@ -82,13 +83,13 @@ public interface GetBranch {
 
         SceneIndividualDescriptor indSceneDesc2= new SceneIndividualDescriptor(sceneName, ontoRef);
         indSceneDesc2.readSemantic();
-        sj=PropertyManager.ReadProperty(SITBase.DATA_PROPERTY.STORING_COUNTER, indSceneDesc2);
-        rj=PropertyManager.ReadProperty(SITBase.DATA_PROPERTY.RETRIEVING_COUNTER, indSceneDesc2);
+        sj=PropertyManager.ReadProperty(Dictionary_reasoner.STORING_COUNTER, indSceneDesc2);
+        rj=PropertyManager.ReadProperty(Dictionary_reasoner.RETRIEVING_COUNTER, indSceneDesc2);
         jd=nodeDesc.getCardinality();
         totalScore= ad*jd+ac*sumsondiv+as*sj+ar*rj;
 
-        indSceneDesc2.removeData(SITBase.DATA_PROPERTY.SCORE);
-        indSceneDesc2.addData(SITBase.DATA_PROPERTY.SCORE, totalScore);
+        indSceneDesc2.removeData(Dictionary_reasoner.SCORE);
+        indSceneDesc2.addData(Dictionary_reasoner.SCORE, totalScore);
         indSceneDesc2.writeSemantic();
 
 
@@ -110,7 +111,7 @@ public interface GetBranch {
             SceneIndividualDescriptor indScoreDesc = new SceneIndividualDescriptor(i, ontoRef);
             indScoreDesc.readSemantic();
             indScoreDesc.getDataSemantics();
-            normFactor+= PropertyManager.ReadProperty(SITBase.DATA_PROPERTY.SCORE, indScoreDesc);
+            normFactor+= PropertyManager.ReadProperty(Dictionary_reasoner.SCORE, indScoreDesc);
         }
 
         return normFactor;

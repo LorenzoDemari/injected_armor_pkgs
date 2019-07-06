@@ -2,6 +2,7 @@ package it.emarolab.sit.reasonerCore;
 
 import it.emarolab.amor.owlInterface.OWLReferences;
 import it.emarolab.owloop.aMORDescriptor.MORAxioms;
+import it.emarolab.sit.Dictionary_reasoner;
 import it.emarolab.sit.SITBase;
 import it.emarolab.sit.owloopDescriptor.SceneClassDescriptor;
 import it.emarolab.sit.owloopDescriptor.SceneIndividualDescriptor;
@@ -56,9 +57,9 @@ public class Forgetting extends ReasonerBase implements GetBranch, RemoveNode, P
 
                 RemoveNode.deletenode(sceneName, ontoRef);
 
-                indScoreDesc.removeData(SITBase.DATA_PROPERTY.SCORE);
-                indScoreDesc.removeData(SITBase.DATA_PROPERTY.RETRIEVING_COUNTER);
-                indScoreDesc.removeData(SITBase.DATA_PROPERTY.STORING_COUNTER);
+                indScoreDesc.removeData(Dictionary_reasoner.SCORE);
+                indScoreDesc.removeData(Dictionary_reasoner.RETRIEVING_COUNTER);
+                indScoreDesc.removeData(Dictionary_reasoner.STORING_COUNTER);
                 ontoRef.removeIndividual(i);
                 //indScoreDesc.removeTypeIndividual(INDIVIDUAL.SCENE+sceneNumber);
 

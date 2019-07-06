@@ -2,6 +2,7 @@ package it.emarolab.sit.reasonerCore;
 
 
 import it.emarolab.amor.owlInterface.OWLReferences;
+import it.emarolab.sit.Dictionary_reasoner;
 import it.emarolab.sit.SITBase;
 import it.emarolab.sit.owloopDescriptor.SceneIndividualDescriptor;
 import it.emarolab.sit.realObject.GeometricPrimitive;
@@ -60,7 +61,7 @@ public class Retrieving extends ReasonerBase implements AddNode, RemoveNode, Bui
         }
 
         SceneIndividualDescriptor descrip= Recognition.Recognize(recognition,ontoRef);
-         descrip.removeData(SITBase.DATA_PROPERTY.RETRIEVING_COUNTER);
+         descrip.removeData(Dictionary_reasoner.RETRIEVING_COUNTER);
          descrip.writeSemantic();
         CleanIndividuals.Clean(objects,recognition,ontoRef);
         ontoRef=this.SaveNdOpenOnto();

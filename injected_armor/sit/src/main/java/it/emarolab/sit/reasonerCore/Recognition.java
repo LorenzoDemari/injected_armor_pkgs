@@ -2,6 +2,7 @@ package it.emarolab.sit.reasonerCore;
 
 import it.emarolab.amor.owlInterface.OWLReferences;
 import it.emarolab.owloop.aMORDescriptor.MORAxioms;
+import it.emarolab.sit.Dictionary_reasoner;
 import it.emarolab.sit.SITBase;
 import it.emarolab.sit.owloopDescriptor.SceneClassDescriptor;
 import it.emarolab.sit.owloopDescriptor.SceneIndividualDescriptor;
@@ -61,11 +62,11 @@ public interface Recognition {
 
         if (callerName.contains("Storing"))
         {
-             property= SITBase.DATA_PROPERTY.STORING_COUNTER;
+             property= Dictionary_reasoner.STORING_COUNTER;
         }
         else if (callerName.contains("Retrieving"))
         {
-            property = SITBase.DATA_PROPERTY.RETRIEVING_COUNTER;
+            property = Dictionary_reasoner.RETRIEVING_COUNTER;
         }
 
 
