@@ -3,9 +3,10 @@ package it.emarolab.sit;
 import it.emarolab.amor.owlDebugger.Logger;
 import it.emarolab.amor.owlInterface.OWLReferences;
 import it.emarolab.amor.owlInterface.OWLReferencesInterface;
-import it.emarolab.sit.SITBase;
-import it.emarolab.sit.SpatialSimplifier;
-import it.emarolab.sit.realObject.*;
+import it.emarolab.sit.realObject.Cone;
+import it.emarolab.sit.realObject.Cylinder;
+import it.emarolab.sit.realObject.GeometricPrimitive;
+import it.emarolab.sit.realObject.Sphere;
 import it.emarolab.sit.reasonerCore.*;
 import it.emarolab.sit.sceneRepresentation.FullSceneRepresentation;
 
@@ -44,6 +45,9 @@ public class Main2
         implements SITBase, RemoveNode, GetBranch {
 
     private static final String ONTO_NAME = "ONTO_NAME"; // an arbitrary name to refer the ontology
+    private static final String ONTO_FILE = "/home/lorenzo/rosjava/src/injected_armor_pkgs/injected_armor/sit/resources/t_box/empty-scene.owl";
+    private static final String ONTO_FILE_FULL = "/home/lorenzo/rosjava/src/injected_armor_pkgs/injected_armor/sit/resources/t_box/full-scene.owl";
+
 
     public static void main(String[] args){
 

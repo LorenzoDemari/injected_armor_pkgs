@@ -28,9 +28,7 @@ public interface SITBase {
      * The path to the main t-box ontological representation
      * used by the SIT algorithm, with respect to the {@code src} folder.
      */
-    String ONTO_FILE = "/home/lorenzo/rosjava/src/injected_armor_pkgs/injected_armor/sit/resources/t_box/empty-scene.owl";
-    String ONTO_FILE_FULL = "/home/lorenzo/rosjava/src/injected_armor_pkgs/injected_armor/sit/resources/t_box/full-scene.owl";
-
+    String ONTO_FILE = "/home/bubx/ros_ws/src/injected_armor_pkgs/injected_armor/sit/resources/t_box/empty-scene.owl"; // TODO make this a parameter from ROS launcher
     /**
      * The {@code IRI} domain of the main t-box ontological representation
      * used by the SIT algorithm.
@@ -177,9 +175,6 @@ public interface SITBase {
          * (i.e.: belonging to the {@link CLASS#SPHERE}).
          */
         String SCENE = "Sn-";
-
-
-
     }
 
     /**
@@ -247,8 +242,6 @@ public interface SITBase {
          * (i.e.: {@link it.emarolab.sit.realObject.GeometricPrimitive})
          */
         String PRIMITIVE = "GeometricPrimitive";
-
-
     }
 
     /**
@@ -435,10 +428,6 @@ public interface SITBase {
          * unique identifier (with also {@code PREFIX}) of each individuals in the ontology.
          */
         String ID = PREFIX_HAS + "id";
-
-
-
-
     }
 
     /**
